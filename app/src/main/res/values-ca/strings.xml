@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pt4_Daniel_Infante</string>
+    <string name="alarma">Crear Alarm</string>
+    <string name="mail">Enviar Email</string>
+    <string name="titulo">Intents més Comuns</string>
+</resources>
