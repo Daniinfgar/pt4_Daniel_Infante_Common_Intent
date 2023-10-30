@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-//
+//Este metodo utiliza el Intent AlarmClock para poder crear una alarma.
     public void createAlarm() {
         Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM)
                 .putExtra(AlarmClock.EXTRA_MESSAGE, "Alarma de prueba.")
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
+//Con este metodo podemos abrir la aplicacion de gmail para poder enviar correos.
     public void Correo(){
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:infantegarciadaniel@gmail.com"));
