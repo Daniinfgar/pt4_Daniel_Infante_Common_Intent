@@ -11,6 +11,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private Button alarma;
     private Button mail;
 
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+//
     public void createAlarm() {
         Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM)
                 .putExtra(AlarmClock.EXTRA_MESSAGE, "Alarma de prueba.")
