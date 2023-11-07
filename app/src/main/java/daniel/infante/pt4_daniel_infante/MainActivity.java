@@ -54,36 +54,23 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_INSERT)
                 .putExtra(CalendarContract.Events.TITLE, "Halloween Party")
                 .putExtra(CalendarContract.Events.EVENT_LOCATION, "Haunted House")
-                // Configura la fecha de inicio al 31 de octubre a las 00:00 horas
+                // Configura la fecha de inicio el 31 de octubre a las 00:00 horas
                 .putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true)
                 .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, FechaInicio())
-                // Configura la fecha de fin al 31 de octubre a las 23:59 horas
+                // Configura la fecha final el 31 de octubre a las 23:59 horas
                 .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, FechaFinal());
-
-        if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
-        } else {
-            Toast.makeText(this, "No se encontró ninguna aplicación de calendario", Toast.LENGTH_LONG).show();
-        }
     }
 
     public Long FechaInicio() {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.YEAR, 2023);
-        calendar.set(Calendar.MONTH, Calendar.OCTOBER);
-        calendar.set(Calendar.DAY_OF_MONTH, 31);
-        calendar.set(Calendar.HOUR_OF_DAY, 0);
-        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(2023, Calendar.OCTOBER, 31, 0, 0);
         return calendar.getTimeInMillis();
     }
 
     public Long FechaFinal() {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.YEAR, 2023);
-        calendar.set(Calendar.MONTH, Calendar.OCTOBER);
-        calendar.set(Calendar.DAY_OF_MONTH, 31);
-        calendar.set(Calendar.HOUR_OF_DAY, 23);
-        calendar.set(Calendar.MINUTE, 59);
+        calendar.set(2023, Calendar.OCTOBER, 31, 23, 59);
         return calendar.getTimeInMillis();
     }
 }
